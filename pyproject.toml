@@ -1,0 +1,29 @@
+[tool.poetry]
+name = "dmitriichvtestovoe"
+version = "0.1.0"
+description = ""
+authors = ["Artem <Gakerchannel@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+fastapi = "^0.115.11"
+uvicorn = "^0.34.0"
+sqlalchemy = "^2.0.38"
+alembic = "^1.14.1"
+pydantic = "^2.10.6"
+pydantic-settings = "^2.8.1"
+passlib = "^1.7.4"
+aioredis = "^2.0.1"
+asyncpg = "^0.30.0"
+black = "^25.1.0"
+bcrypt = "^4.3.0"
+pyjwt = "^2.10.1"
+aiohttp = "^3.11.13"
+aiosmtplib = "^4.0.0"
+ruff = "^0.11.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,15 @@
+services:
+  referral_back:
+    container_name: referral_back
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    ports:
+      - "8333:8000"
+    depends_on:
+      - referral_db
+    networks:
+      - DmitriiChvNetwork
+
+networks:
+  DmitriiChvNetwork:

@@ -1,0 +1,37 @@
+services:
+  referral_db:
+    image: postgres:16
+    container_name: referral_db
+    restart: always
+    env_file:
+      - ../.env_docker
+    environment:
+      POSTGRES_USER: "${DB_USER}"
+      POSTGRES_PASSWORD: "${DB_PASS}"
+      POSTGRES_DB: "${DB_NAME}"
+    ports:
+      - "6438:${DB_PORT}"
+    networks:
+      - DmitriiChvNetwork
+    volumes:
+      - pg-data:/var/lib/postgresql/data
+
+  referral_redis:
+    image: redis:latest
+    container_name: referral_redis
+    restart: unless-stopped
+    env_file:
+      - ../.env_docker
+    ports:
+      - "6380:${REDIS_PORT}"
+    volumes:
+      - redis_data:/data
+    networks:
+      - DmitriiChvNetwork
+
+networks:
+  DmitriiChvNetwork:
+
+volumes:
+  pg-data:
+  redis_data:
